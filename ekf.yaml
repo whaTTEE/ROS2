@@ -1,0 +1,29 @@
+ekf_filter_node:
+  ros__parameters:
+    frequency: 30  # EKF 업데이트 주기
+    sensor_timeout: 0.1
+    two_d_mode: true  # 2D 슬램을 위해 z축 움직임 제거
+    transform_time_offset: 0.0
+    transform_timeout: 0.0
+    publish_tf: true
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_link
+    world_frame: odom
+
+    # IMU 센서 구성
+    imu0: /imu/data
+    imu0_config: [false, false, false,
+                  true, true, true,
+                  false, false, false,
+                  true, true, true]
+    imu0_differential: false
+    imu0_relative: true
+
+    # GPS 센서 구성
+    gps0: /gps/fix
+    gps0_config: [true, true, false,
+                  false, false, false,
+                  false, false, false,
+                  false, false, false]
+    gps0_differential: false

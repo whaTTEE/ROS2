@@ -1,0 +1,23 @@
+frequency: 50  # EKF 업데이트 빈도
+sensor_timeout: 0.1  # 데이터 타임아웃
+two_d_mode: true  # 2D 모드 활성화
+odom_frame: odom
+base_link_frame: base_link
+world_frame: map
+
+# IMU 데이터 설정
+imu0: /imu
+imu0_config: [false, false, false,  # x, y, z 위치
+              true, true, true,    # x, y, z 속도
+              true, true, true,    # roll, pitch, yaw 각도
+              true, true, true]    # 각속도
+imu0_differential: false
+imu0_remove_gravitational_acceleration: true
+
+# GPS 데이터 설정
+gps0: /gps/fix
+gps0_config: [true, true, false,   # x, y, z 위치
+              false, false, false, # 속도
+              false, false, false, # 각도
+              false, false, false] # 각속도
+gps0_queue_size: 5
